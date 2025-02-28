@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "list.h"
+#include "stack.h"
 
 
 using namespace std;
@@ -14,8 +14,7 @@ bool cmp(char* input, const char* checkAgainst){ //simplify input to cstring com
 
 int main(){
   char* input = new char[10];
-  List* stack = new List();
-  
+  Stack* stack = new Stack(new List());
   
   while(true){
     cout << "enterc" << endl;
@@ -24,20 +23,22 @@ int main(){
     if(cmp(input,"push")){
       cout << "pushing" << endl;
       Node* pushedNode = new Node();
-      stack->addHead(pushedNode);
+      stack->push(pushedNode);
       cout << "pushed value was " << pushedNode->getValue() << endl;
       stack->print();
       
     }else if(cmp(input,"pop")){
       cout << "popping" << endl;
-      Node* poppedNode = stack->getHead();
-      cout << "popped value was " << poppedNode->getValue() << endl;
-      stack->removeHead();
-      stack->print();
+      Node* poppedNode = stack->pop();
+      if(poppedNode != nullptr){
+	cout << "popped value was " << poppedNode->getValue() << endl;
+	stack->removeHead();
+	stack->print();
+      }
       
     }else if(cmp(input,"peek")){
       cout << "peeking" << endl;
-      Node* peekedNode = stack->getHead();
+      Node* peekedNode = stack->peek();
       cout << "peeked value was " << peekedNode->getValue() << endl;
       stack->print();
       

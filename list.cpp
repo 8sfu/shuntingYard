@@ -5,6 +5,7 @@
 using namespace std;
 
 Node::Node(){
+  next = nullptr;
   cout << "What is the new node?" << endl;
   cin >> value;
   cin.ignore();
@@ -48,9 +49,7 @@ void List::addTail(Node* newNode){
 }
 
 Node* List::getHead(){
-  if(first != nullptr){
     return first;
-  }
 }
 
 Node* List::getTail(){
@@ -62,7 +61,9 @@ Node* List::getTail(){
 }
 
 void List::removeHead(){
-  first = first->getNext();
+  if(first != nullptr){
+    first = first->getNext();
+  }
 }
 
 void List::removeTail(){
@@ -77,47 +78,8 @@ void List::removeTail(){
 }
 
 void List::print(){
-  first->print();
-}
-
-/*Node* Node::removeTail(){
-  Node* temp;
-  if(next == nullptr){
-    return this;
-  }else if(next->next == nullptr){
-    temp = next;
-    next = nullptr;
-    return temp;
-  }else{
-    next->removeTail();
+  if(first != nullptr){
+    first->print();
   }
 }
-
-
-
-List::List(){
-  cout << "What is the head?" << endl;
-  cin >> first->value;
-  cin.ignore();
-}
-
-
-Node* List::getHead(){
-  return first;
-}
-
-Node* List::removeHead(){
-  Node* temp = first;
-  first = first->next;
-  return temp;
-}
-
-Node* List::removeTail(){
-  return first->removeTail();
-}
-
-void List::setHead(Node* newHead){
-  newHead->next = first;
-  first = newHead;
-  }*/
 

@@ -2,6 +2,7 @@
 #define LIST_H
 
 struct Node {
+public:
   Node();
   int getValue();
   Node* getNext();
@@ -9,7 +10,7 @@ struct Node {
   void print();
 private:
   int value;
-  Node* next = nullptr;
+  Node* next;
 };
 
 class List {
@@ -21,9 +22,7 @@ class List {
   Node* getTail();
   void removeHead();
   void removeTail();
-
   void print();
-  //void setHead(Node* newHead);
  private:
   Node* first;
 };
