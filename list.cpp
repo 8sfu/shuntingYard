@@ -6,6 +6,8 @@ using namespace std;
 
 Node::Node(){
   next = nullptr;
+  left = nullptr;
+  right = nullptr;
   cout << "What is the new node?" << endl;
   cin >> value;
   cin.ignore();
@@ -83,3 +85,6 @@ void List::print(){
   }
 }
 
+List::~List(){
+
+}

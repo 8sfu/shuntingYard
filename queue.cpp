@@ -12,7 +12,7 @@ void Queue::enQueue(Node* newNode){
 }
 
 Node* Queue::deQueue(){
-  temp = queue->getTail();
+  Node* temp = queue->getTail();
   queue->removeTail();
   return temp;
 }

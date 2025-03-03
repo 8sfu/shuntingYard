@@ -2,13 +2,14 @@
 #define QUEUE_H
 #include "list.h"
 
-class Queue : public List {
+class Queue {
  public:
   Queue(List* list);
   void enQueue(Node* newNode);
   Node* deQueue();
+  void print();
  private:
   List* queue;
-}
+};
 
 #endif

@@ -25,5 +25,10 @@ void Stack::print(){
   if(stack->getHead() != nullptr){
     cout << "Stack:  ";
     stack->print();
+    cout << endl;
   }
+}
+
+Stack::~Stack(){
+  delete[] stack;
 }

@@ -11,6 +11,8 @@ public:
 private:
   int value;
   Node* next;
+  Node* left;
+  Node* right;
 };
 
 class List {
@@ -23,6 +25,7 @@ class List {
   void removeHead();
   void removeTail();
   void print();
+  ~List();
  private:
   Node* first;
 };
